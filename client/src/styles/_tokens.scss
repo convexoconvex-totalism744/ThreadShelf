@@ -1,0 +1,148 @@
+:root {
+  // Keeps unstyled UA widgets (native dropdowns, checkboxes, scrollbars,
+  // autofill) on the same theme as the tokens below.
+  color-scheme: dark;
+
+  --bg-0: oklch(0.155 0.005 240);
+  --bg-1: oklch(0.18 0.006 240);
+  --bg-2: oklch(0.215 0.007 240);
+  --bg-3: oklch(0.25 0.008 240);
+  --bg-hover: oklch(0.235 0.008 240);
+
+  --border-0: oklch(0.27 0.008 240);
+  --border-1: oklch(0.33 0.01 240);
+  --border-2: oklch(0.42 0.012 240);
+
+  --text-0: oklch(0.965 0.005 240);
+  --text-1: oklch(0.82 0.008 240);
+  --text-2: oklch(0.62 0.01 240);
+  --text-3: oklch(0.46 0.01 240);
+  --text-4: oklch(0.34 0.01 240);
+
+  --accent: oklch(0.78 0.13 215);
+  --accent-soft: oklch(0.78 0.13 215 / 0.14);
+  --accent-border: oklch(0.78 0.13 215 / 0.35);
+  --accent-ink: oklch(0.18 0.04 240);
+
+  --danger: oklch(0.7 0.16 25);
+  --danger-soft: oklch(0.7 0.16 25 / 0.14);
+  --success: oklch(0.74 0.13 155);
+  --success-soft: oklch(0.74 0.13 155 / 0.14);
+  --warning: oklch(0.78 0.15 75);
+  --warning-soft: oklch(0.78 0.15 75 / 0.14);
+
+  --role-user: oklch(0.78 0.1 230);
+  --role-reasoning: oklch(0.8 0.13 75);
+  --role-response: oklch(0.76 0.11 155);
+
+  --p-google: oklch(0.7 0.13 250);
+  --p-openrouter: oklch(0.72 0.15 320);
+  --p-openai: oklch(0.74 0.13 155);
+  --p-claude: oklch(0.76 0.13 55);
+  --p-lmstudio: oklch(0.72 0.12 200);
+  --p-grok: oklch(0.7 0.02 260);
+
+  // Chrome surfaces (themed)
+  --sidebar-bg: oklch(0.16 0.005 240 / 0.6);
+  --sidebar-rail-bg: oklch(0.155 0.005 240 / 0.7);
+  --topbar-bg: oklch(0.165 0.005 240 / 0.85);
+  --thread-bar-bg: oklch(0.16 0.005 240 / 0.88);
+  --thread-glow-2: oklch(0.2 0.02 240 / 0.4);
+  --empty-bg: oklch(0.17 0.005 240 / 0.5);
+  --overlay-bg: oklch(0.08 0.004 240 / 0.58);
+  --scrim-bg: oklch(0.1 0.005 240 / 0.55);
+  --code-bg: oklch(0 0 0 / 0.25);
+  --dialog-shadow: 0 30px 80px -20px oklch(0 0 0 / 0.7);
+  --reasoning-bg: oklch(0.18 0.012 75 / 0.3);
+  --reasoning-bg-strong: oklch(0.18 0.012 75 / 0.45);
+  --reasoning-bg-pill: oklch(0.18 0.012 75 / 0.6);
+  --reasoning-border: oklch(0.8 0.13 75 / 0.18);
+  --reasoning-border-strong: oklch(0.8 0.13 75 / 0.35);
+  --reasoning-border-active: oklch(0.8 0.13 75 / 0.5);
+  --glow-1: oklch(0.22 0.04 230 / 0.5);
+  --glow-2: oklch(0.2 0.04 280 / 0.35);
+  --glow-reading: oklch(0.21 0.03 250 / 0.4);
+
+  --font-sans: Aptos, 'Segoe UI Variable', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Cascadia Code', 'SFMono-Regular', Consolas, ui-monospace, monospace;
+
+  // Small-text floor. The UI leans on mono labels, badges, and metadata rows;
+  // below ~11px they stop being readable on a normal-DPI display, so every such
+  // label goes through one of these two steps instead of a hand-picked size.
+  --fs-micro: 11px; // uppercase tags, keycaps, dot-separated meta
+  --fs-meta: 11.5px; // secondary lines that are still meant to be read
+
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+
+  --row-h: 32px;
+  --pad-x: 14px;
+  --pad-y: 10px;
+}
+
+// Light theme — opt in via <html data-theme="light">
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg-0: oklch(0.985 0.002 240);
+  --bg-1: oklch(0.965 0.003 240);
+  --bg-2: oklch(0.94 0.004 240);
+  --bg-3: oklch(0.91 0.005 240);
+  --bg-hover: oklch(0.945 0.005 240);
+
+  --border-0: oklch(0.9 0.005 240);
+  --border-1: oklch(0.84 0.007 240);
+  --border-2: oklch(0.74 0.01 240);
+
+  --text-0: oklch(0.23 0.012 240);
+  --text-1: oklch(0.34 0.012 240);
+  --text-2: oklch(0.48 0.012 240);
+  --text-3: oklch(0.6 0.012 240);
+  --text-4: oklch(0.72 0.01 240);
+
+  --accent: oklch(0.6 0.13 220);
+  --accent-soft: oklch(0.6 0.13 220 / 0.12);
+  --accent-border: oklch(0.6 0.13 220 / 0.4);
+  --accent-ink: oklch(0.99 0.01 220);
+
+  --danger: oklch(0.55 0.19 25);
+  --danger-soft: oklch(0.55 0.19 25 / 0.12);
+  --success: oklch(0.52 0.13 155);
+  --success-soft: oklch(0.52 0.13 155 / 0.13);
+  --warning: oklch(0.6 0.15 75);
+  --warning-soft: oklch(0.6 0.15 75 / 0.14);
+
+  --role-user: oklch(0.55 0.13 230);
+  --role-reasoning: oklch(0.58 0.14 75);
+  --role-response: oklch(0.52 0.12 155);
+
+  --p-google: oklch(0.52 0.15 250);
+  --p-openrouter: oklch(0.55 0.18 320);
+  --p-openai: oklch(0.52 0.13 155);
+  --p-claude: oklch(0.55 0.14 55);
+  --p-lmstudio: oklch(0.54 0.13 200);
+  --p-grok: oklch(0.5 0.03 260);
+
+  --sidebar-bg: oklch(0.975 0.003 240 / 0.75);
+  --sidebar-rail-bg: oklch(0.97 0.003 240 / 0.82);
+  --topbar-bg: oklch(0.985 0.003 240 / 0.85);
+  --thread-bar-bg: oklch(0.985 0.003 240 / 0.92);
+  --thread-glow-2: oklch(0.93 0.03 240 / 0.9);
+  --empty-bg: oklch(0.97 0.006 240 / 0.9);
+  --overlay-bg: oklch(0.38 0.02 240 / 0.18);
+  --scrim-bg: oklch(0.4 0.02 240 / 0.18);
+  --code-bg: oklch(0.94 0.01 240 / 0.95);
+  --dialog-shadow: 0 24px 64px -28px oklch(0.38 0.02 240 / 0.28);
+  --reasoning-bg: oklch(0.95 0.03 85 / 0.72);
+  --reasoning-bg-strong: oklch(0.94 0.035 85 / 0.84);
+  --reasoning-bg-pill: oklch(0.91 0.05 85 / 0.92);
+  --reasoning-border: oklch(0.82 0.06 85 / 0.45);
+  --reasoning-border-strong: oklch(0.78 0.07 85 / 0.62);
+  --reasoning-border-active: oklch(0.72 0.08 85 / 0.78);
+  --glow-1: oklch(0.86 0.06 230 / 0.5);
+  --glow-2: oklch(0.86 0.06 285 / 0.4);
+  --glow-reading: oklch(0.88 0.05 250 / 0.45);
+}

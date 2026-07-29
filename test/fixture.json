@@ -1,0 +1,23 @@
+{
+  "chunkedPrompt": {
+    "chunks": [
+      {
+        "text": "Hello, think step by step.",
+        "role": "user",
+        "tokenCount": 5
+      },
+      {
+        "text": "I will think first.\n\nThen answer.",
+        "role": "model",
+        "isThought": true,
+        "parts": [{ "text": "I will think first.", "thought": true }]
+      },
+      {
+        "text": "Here is the answer.",
+        "role": "model",
+        "finishReason": "STOP",
+        "tokenCount": 4
+      }
+    ]
+  }
+}

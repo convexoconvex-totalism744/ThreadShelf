@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible ThreadShelf problem using synthetic data.
+title: '[Bug]: '
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve ThreadShelf. Never attach a real chat export,
+        API key, local database, private model path, or screenshot with private content.
+  - type: input
+    id: version
+    attributes:
+      label: ThreadShelf version or commit
+      placeholder: v1.0.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Import / parser
+        - Indexing / storage
+        - Search / thread reader
+        - llama.cpp generation
+        - OpenRouter generation
+        - MCP / HTTP API
+        - UI / responsive layout
+        - Installation / documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Use a tiny synthetic example and list exact steps.
+      placeholder: |
+        1. Start ThreadShelf with...
+        2. Index the attached synthetic fixture...
+        3. Search for...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Node.js version, browser, provider/app version
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed private conversation content, secrets, account data, and local paths.
+          required: true

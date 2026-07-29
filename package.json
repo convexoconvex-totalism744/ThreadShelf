@@ -1,0 +1,84 @@
+{
+  "name": "threadshelf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local semantic search, backup, and RAG for your AI chats — ChatGPT, Claude, Google AI Studio, OpenRouter, LM Studio, and Grok — searchable from a web UI, HTTP API, or MCP",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrystianSchutz/viewerHistoriLLM.git"
+  },
+  "homepage": "https://github.com/ChrystianSchutz/viewerHistoriLLM#readme",
+  "bugs": {
+    "url": "https://github.com/ChrystianSchutz/viewerHistoriLLM/issues"
+  },
+  "keywords": [
+    "semantic-search",
+    "rag",
+    "local-first",
+    "chatgpt",
+    "claude",
+    "openrouter",
+    "lm-studio",
+    "grok",
+    "lancedb",
+    "mcp"
+  ],
+  "workspaces": [
+    "client"
+  ],
+  "overrides": {
+    "@huggingface/transformers": {
+      "sharp": "0.35.3"
+    },
+    "onnxruntime-node": {
+      "adm-zip": "0.6.0"
+    }
+  },
+  "scripts": {
+    "test": "tsx --test test/*.test.js",
+    "test:e2e": "tsx --test test/e2e/*.test.js",
+    "test:playwright": "playwright test",
+    "check:repo": "tsx scripts/check-repo-hygiene.ts",
+    "check": "npm run check:repo && npm run lint && npx tsc --noEmit && npm test && npm run test:e2e && npm run build:client && npm run test:playwright",
+    "parse": "tsx src/cli.ts",
+    "ingest": "tsx src/ingest-cli.ts",
+    "search": "tsx src/search-cli.ts",
+    "setup:llama": "tsx scripts/setup-llama-cpp.ts",
+    "start": "tsx src/server.ts",
+    "dev": "tsx --watch src/server.ts",
+    "dev:client": "npm run dev --workspace client",
+    "build": "npm run build:client",
+    "build:client": "npm run build --workspace client",
+    "docs:screenshots": "tsx scripts/capture-docs-screenshots.ts",
+    "mcp": "tsx mcp/server.ts",
+    "lint": "eslint src/ mcp/ client/src/",
+    "format": "prettier --write \"src/**/*.ts\" \"client/src/**/*.{ts,tsx}\""
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@lancedb/lancedb": "^0.29.0",
+    "express": "^5.2.1",
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.0",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^25.9.1",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "prettier": "^3.8.4",
+    "sass": "^1.101.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vite": "^8.0.16"
+  }
+}

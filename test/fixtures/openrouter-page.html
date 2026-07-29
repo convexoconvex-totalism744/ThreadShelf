@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+  Anonymized, structurally-faithful snapshot of the OpenRouter chat UI (2026-06).
+  It mirrors the exact DOM contract the export scripts depend on:
+    - sidebar chat links:  a[href*="room="]
+    - message wrappers:    [data-message-id] > [data-testid="user-message"|"assistant-message"]
+    - message body text:   [data-dd-privacy="hidden"] (assistant: reasoning panel first, answer last)
+    - model favicon:       img[alt^="Favicon for"]
+  Used by test/playwright/openrouter-export.spec.js. No real user content.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>OpenRouter</title>
+  </head>
+  <body>
+    <nav aria-label="Chat history">
+      <a href="/chat?room=orc-111-AaAa">Wiersz o kodzie</a>
+      <a href="/chat?room=orc-222-BbBb">Notatka o eksporcie</a>
+      <a href="/chat">New chat</a>
+    </nav>
+
+    <main data-testid="playground-container">
+      <div data-testid="message-list-scroll" style="overflow-y: auto">
+        <div data-testid="message-list-content">
+          <!-- user turn -->
+          <div data-message-id="msg-1">
+            <div data-testid="user-message">
+              <div class="avatar"><svg width="10" height="10"></svg></div>
+              <div data-dd-privacy="hidden">
+                <div>Napisz wiersz o kodzie. Znaki: zażółć gęślą jaźń, 漢字, 🔐.</div>
+              </div>
+              <button aria-label="Copy">Copy</button>
+              <button aria-label="Edit">Edit</button>
+            </div>
+          </div>
+
+          <!-- assistant turn: reasoning panel (first) + answer panel (last) -->
+          <div data-message-id="msg-2">
+            <div data-testid="assistant-message">
+              <div class="timestamp">2 days ago</div>
+              <picture><img width="16" height="16" alt="Favicon for test-model" src="x" /></picture>
+              <div class="reasoning">
+                <div role="button" title="Collapse reasoning"><span>Reasoning</span></div>
+                <div data-dd-privacy="hidden">
+                  <p>THIS IS REASONING and must be excluded from the export.</p>
+                </div>
+              </div>
+              <div data-dd-privacy="hidden">
+                <p>To jest final answer: ñ, ç, ü, 日本語.</p>
+              </div>
+              <button aria-label="Retry">Retry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-testid="playground-composer"></div>
+    </main>
+  </body>
+</html>

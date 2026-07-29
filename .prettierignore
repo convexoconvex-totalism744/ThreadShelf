@@ -1,0 +1,9 @@
+node_modules
+client/node_modules
+dist
+public/assets
+.lancedb
+.uploads
+DO_NOT_COMMIT
+test-exports
+*.lance
