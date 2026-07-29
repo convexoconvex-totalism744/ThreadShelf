@@ -40,8 +40,8 @@
     }
   },
   "scripts": {
-    "test": "tsx --test test/*.test.js",
-    "test:e2e": "tsx --test test/e2e/*.test.js",
+    "test": "node scripts/run-node-tests.js test",
+    "test:e2e": "node scripts/run-node-tests.js test/e2e",
     "test:playwright": "playwright test",
     "check:repo": "tsx scripts/check-repo-hygiene.ts",
     "check": "npm run check:repo && npm run lint && npx tsc --noEmit && npm test && npm run test:e2e && npm run build:client && npm run test:playwright",
