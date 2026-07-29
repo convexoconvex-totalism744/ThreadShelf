@@ -186,6 +186,14 @@ Three layers, all runnable offline:
    `npm run test:playwright`. **Requires** `npm run build:client` first and
    `npx playwright install chromium`.
 
+Test commands must be shell-independent on Windows and Linux and work on the
+minimum supported Node.js version. Do not rely on shell glob expansion in npm
+scripts; enumerate matching files in JavaScript and pass them as explicit
+arguments. Tests for `Intl` date/time output must not assume a locale-specific
+field order, punctuation, prefix relationship, or time zone. Compare against an
+equivalently configured formatter or inspect `formatToParts()`; set an explicit
+locale or time zone only when that behavior is what the test is meant to verify.
+
 ### Rules for E2E
 
 - Never point E2E at a user's real LanceDB/uploads — always use the temp dirs the
